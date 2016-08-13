@@ -14,14 +14,29 @@ class Tag
     @width    = Tag.tag_width(@tag)
   end
 
+
+  def self.tag_height(tag)
+    return Tag::MAX_HEIGHT
+  end
+
+
+  def self.tag_width(tag)
+    return tag.length
+    # To do: calculate width from individial letters
+  end
+
+
+  def self.str_to_tag(input)
+    return input.split("")
+  end
+
 # Returns true if the length of the pixels 
 # is longer than the maximum visible canvas. 
 # Otherwise false.
-  def too_long
-      # check pixel width of each letter.
+  def too_long()
+    return @width > Tag::MAX_WIDTH
+      # TODO: check pixel width of each letter.
       # add a pixel for each letter space.
-      # if the total is greater than MAX_WIDTH.
-      # TODO
   end
 
 # Prints a 2D diagram of the tag in pixels.
@@ -35,22 +50,7 @@ class Tag
       puts "print list"
   end
 
-  def self.str_to_tag(input)
-    output = []
-    input.split("") { |letter|
-      output << letter
-    }
-    return output
-  end
-
-  def self.tag_width(tag)
-    return tag.length
-    # To do: calculate width from individial letters
-  end
-
-  def self.tag_height(tag)
-    return 7
-  end
+  
 
 
 end
