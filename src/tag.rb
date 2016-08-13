@@ -2,8 +2,11 @@
 
 class Tag
 
-  attr_reader :tag_text
+  attr_reader :tag_text, :tag, :height, :width
 
+  MAX_HEIGHT =  7
+  MAX_WIDTH  = 52
+  
   def initialize(input)
     @tag_text = input
     @tag      = Tag.str_to_tag(input)
@@ -17,7 +20,8 @@ class Tag
   def too_long
       # check pixel width of each letter.
       # add a pixel for each letter space.
-      # if the total is greater than 52.
+      # if the total is greater than MAX_WIDTH.
+      # TODO
   end
 
 # Prints a 2D diagram of the tag in pixels.
