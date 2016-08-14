@@ -1,4 +1,6 @@
-# require_relative('./letter')
+require_relative('./letter')
+require_relative('./pair')
+
 
 class Tag
 
@@ -9,7 +11,7 @@ class Tag
   
   def initialize(input)
     @tag_text = input
-    @tag      = Tag.str_to_tag(input)
+    @tag      = Tag.str_to_tag(input)  # tag is Array of Letter objects
     @height   = Tag.tag_height(@tag)
     @width    = Tag.tag_width(@tag)
   end
@@ -21,33 +23,56 @@ class Tag
 
 
   def self.tag_width(tag)
-    return tag.length
-    # To do: calculate width from individial letters
+    width = 1              # leaves space for one column on the left
+    tag.each { |letter|
+      width += letter.width()
+    }
+    return width
   end
 
 
   def self.str_to_tag(input)
-    return input.split("")
+    tag = []
+    input.split("").each { |char|
+      tag.push(Letter.new(char))
+    }
+    return tag
   end
+
 
 # Returns true if the length of the pixels 
 # is longer than the maximum visible canvas. 
 # Otherwise false.
   def too_long()
     return @width > Tag::MAX_WIDTH
-      # TODO: check pixel width of each letter.
-      # add a pixel for each letter space.
   end
+
 
 # Prints a 2D diagram of the tag in pixels.
   def print_pixels
-    puts "print pixels"
+    pixels = Array.new(Tag::MAX_HEIGHT) { Array.new(Tag::MAX_WIDTH, ' ')}
+    current_column = 1
+
+    @tag.each { |letter|
+      letter.bitmap.each { |index2d|
+        #if ((index2d.second < Tag MAX_HEIGHT) && 
+        #    (index2d.first + current_column < Tag::MAX_WIDTH))
+          pixels[index2d.second-1][index2d.first + current_column] = '*'
+        #end
+      }
+      current_column += letter.width + 1   # +1 to leave one space between letters
+    }
+    
+    puts ""
+    pixels.each { |row| puts(row.join) }
+    puts ""
+    
   end
 
 # Prints a list of weeks and days 
 # to contribute to Github to create the tag text.
   def print_list
-      puts "print list"
+      puts "print list: TODO"
   end
 
   def to_s()
