@@ -57,7 +57,7 @@ class Tag
       letter.bitmap.each { |index2d|
         #if ((index2d.second < Tag MAX_HEIGHT) && 
         #    (index2d.first + current_column < Tag::MAX_WIDTH))
-          pixels[index2d.second-1][index2d.first + current_column] = '*'
+          pixels[index2d.second-1][index2d.first + current_column] = "\u2588"
         #end
       }
       current_column += letter.width + 1   # +1 to leave one space between letters
