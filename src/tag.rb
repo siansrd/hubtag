@@ -50,7 +50,8 @@ class Tag
       puts "print list"
   end
 
-  
-
+  def to_s()
+    return @tag_text
+  end
 
 end
