@@ -44,7 +44,7 @@ class Tag
 # is longer than the maximum visible canvas. 
 # Otherwise false.
   def too_long()
-    return @width > Tag::MAX_WIDTH
+    return @width + @tag_text.length > Tag::MAX_WIDTH
   end
 
 
@@ -72,7 +72,9 @@ class Tag
 # Prints a list of weeks and days 
 # to contribute to Github to create the tag text.
   def print_list
+      # take the first letter from the tag, letter.print_week
       puts "print list: TODO"
+      @tag[0].print_weeks_and_days()
   end
 
   def to_s()

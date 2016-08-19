@@ -1,4 +1,5 @@
 require_relative('./pair')
+require('pry-byebug')
 
 class Letter
 
@@ -218,9 +219,12 @@ class Letter
     
   def initialize(character)
     @char   = character.upcase()
-    @bitmap = Letter::LETTERS[character.upcase()]
+    @bitmap = Letter::LETTERS[character.upcase()] #array of Pair objects
     @height = Letter.height(bitmap)
     @width  = Letter.width(bitmap)
+    if bitmap.length == 0
+        @width = 1
+    end
   end
   
   def self.height(bitmap)
@@ -234,5 +238,32 @@ class Letter
   def print_bitmap()
     puts "print_bitmap(): TODO"
   end
+
+  def print_weeks_and_days()
+    list = @bitmap.map do |pair|
+        "Week #{pair.first}, Day #{pair.second}."
+    end
+    return list
+  end
+
+  def print_weeks_and_days2()
+    weeks = [[],[],[],[],[],[]]
+    @bitmap.each do |pair|
+        weeks[pair.first].push(pair.second)
+    end
+    week_num = 0
+    weeks.each do |week|
+        output = "Week #{week_num}:"
+        if !week.empty?
+            week.each do |day|
+                output += " #{day}"
+            end
+        puts output
+        end
+        week_num += 1
+    end
+  end
   
+  binding.pry
+  nil
 end

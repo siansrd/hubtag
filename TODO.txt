@@ -1,0 +1,8 @@
+To do:
+
+* Website
+* Check box select
+
+
+Sian questions:
+* How come .first and .second work as methods, in the print_weeks_and_days method?

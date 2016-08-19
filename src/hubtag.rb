@@ -1,10 +1,10 @@
 require_relative('./letter')
 require_relative('./tag')
 
-input = "HubTag!"
+puts "What's your tag?"
+input = gets.chomp.upcase
 
 tag = Tag.new(input)
-
 
   if !tag.too_long
      tag.print_pixels()  
