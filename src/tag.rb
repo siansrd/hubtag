@@ -74,7 +74,7 @@ class Tag
   def print_list
       # take the first letter from the tag, letter.print_week
       puts "print list: TODO"
-      @tag[0].print_weeks_and_days()
+      @tag[0].print_weeks_and_days2()
   end
 
   def to_s()

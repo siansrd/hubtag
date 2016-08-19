@@ -1,5 +1,5 @@
 require_relative('./pair')
-require('pry-byebug')
+
 
 class Letter
 
@@ -220,6 +220,7 @@ class Letter
   def initialize(character)
     @char   = character.upcase()
     @bitmap = Letter::LETTERS[character.upcase()] #array of Pair objects
+    # FIXME: if bitmap is nil set it to empty space?
     @height = Letter.height(bitmap)
     @width  = Letter.width(bitmap)
     if bitmap.length == 0
@@ -264,6 +265,4 @@ class Letter
     end
   end
   
-  binding.pry
-  nil
 end

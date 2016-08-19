@@ -10,7 +10,7 @@ tag = Tag.new(input)
      tag.print_pixels()  
      tag.print_list()
   else
-    puts "Error. Tag is too long."
+    puts "Error: the tag you provided is too long."
   end
 
 
