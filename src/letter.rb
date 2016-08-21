@@ -5,6 +5,8 @@ class Letter
 
   attr_reader :char, :bitmap, :height,:width
 
+  WEEKDAYS = ["", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
   # letter pixel representation: pixel at (column,row) is set
   LETTERS = {
   
@@ -240,24 +242,17 @@ class Letter
     puts "print_bitmap(): TODO"
   end
 
-  def print_weeks_and_days()
-    list = @bitmap.map do |pair|
-        "Week #{pair.first}, Day #{pair.second}."
-    end
-    return list
-  end
-
-  def print_weeks_and_days2()
+  def print_weeks_and_days(previous_week)
     weeks = [[],[],[],[],[],[]]
     @bitmap.each do |pair|
         weeks[pair.first].push(pair.second)
     end
     week_num = 0
     weeks.each do |week|
-        output = "Week #{week_num}:"
+        output = "Week #{previous_week + week_num}: "
         if !week.empty?
             week.each do |day|
-                output += " #{day}"
+                output += Letter::WEEKDAYS[day] + ", "
             end
         puts output
         end
