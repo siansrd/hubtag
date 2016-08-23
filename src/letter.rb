@@ -244,9 +244,14 @@ class Letter
   end
 
   def print_weeks_and_days(previous_week)
-    weeks = [[],[],[],[],[],[]]
+    weeks = [[],[],[],[],[]]
+    
+    if @char == ' '
+      puts "Week #{previous_week + 1}: "
+    end
+    
     @bitmap.each do |pair|
-        weeks[pair.first].push(pair.second)
+        weeks[pair.first-1].push(pair.second)
     end
     week_num = 0
     weeks.each do |week|

@@ -72,7 +72,8 @@ class Tag
 # Prints a list of weeks and days 
 # to contribute to Github to create the tag text.
   def print_list
-      current_week = 0
+      puts "Week 0: "
+      current_week = 1
       @tag.each do |letter|
         letter.print_weeks_and_days(current_week)
         current_week += letter.width + 1

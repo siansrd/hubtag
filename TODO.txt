@@ -1,26 +1,9 @@
 To do:
 
-* Input: "Hey you" - missing week number
-    Week 14: Sun, 
-    Week 15: 
-    Week 17: 
-    Week 18: Sun, 
-
-* Remove comma on last day of the week
-
 * Check input for unsupported characters e.g.'&' 
   (looking it up in LETTERS returns nil)
    What's your tag?
    guns&roses
    <error/crash>
 
- * Website with check box select
-
-
-Sian questions:
-
-* How come .first and .second work as methods, in the print_weeks_and_days method?
-
--> because require_relative('./pair') in letter.rb brings in Pair functions
-   (see pair.rb, in particular the methods first and second are defined
-    on line 3 using:   attr_reader :first, :second)
+ * Website with check box select (using Sinatra)
