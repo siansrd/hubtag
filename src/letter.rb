@@ -253,8 +253,9 @@ class Letter
         if !week.empty?
             week.each do |day|
                 output += Letter::WEEKDAYS[day] + ", "
-            end
-        puts output
+            end 
+          2.times { output.chop! }   # get rid of the trailing comma
+          puts output
         end
         week_num += 1
     end
