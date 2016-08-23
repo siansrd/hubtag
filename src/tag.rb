@@ -77,7 +77,7 @@ class Tag
       @tag.each do |letter|
         letter.print_weeks_and_days(current_week)
         current_week += letter.width + 1
-        puts "Week #{current_week}: "
+        puts "Week #{current_week-1}: "
       end
   end
 

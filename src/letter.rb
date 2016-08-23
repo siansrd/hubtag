@@ -223,10 +223,15 @@ class Letter
   def initialize(character)
     @char   = character.upcase()
     @bitmap = Letter::LETTERS[character.upcase()] #array of Pair objects
-    # FIXME: if bitmap is nil set it to empty space?
     @height = Letter.height(bitmap)
     @width  = Letter.width(bitmap)
-    if bitmap.length == 0
+
+    if @bitmap == nil
+      @bitmap = Letter::LETTERS[' ']
+      puts "Warning: unsupported character (#{character}) replaced by a space."
+    end
+    
+    if @bitmap.length == 0
         @width = 1
     end
   end
@@ -247,7 +252,8 @@ class Letter
     weeks = [[],[],[],[],[]]
     
     if @char == ' '
-      puts "Week #{previous_week + 1}: "
+      puts "Week #{previous_week}: "
+      return
     end
     
     @bitmap.each do |pair|
