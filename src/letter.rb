@@ -136,8 +136,7 @@ class Letter
     'Z' => [Pair.new(1,1), Pair.new(1,5), Pair.new(1,6), Pair.new(1,7),
             Pair.new(2,1), Pair.new(2,4), Pair.new(2,7), Pair.new(3,1),
             Pair.new(3,3), Pair.new(3,7), Pair.new(4,1), Pair.new(4,2),
-            Pair.new(4,3), Pair.new(4,4), Pair.new(4,5), Pair.new(4,6),
-            Pair.new(4,7), Pair.new(5,1), Pair.new(5,2), Pair.new(5,7)],
+            Pair.new(4,7), Pair.new(5,1), Pair.new(5,7)],
  
     '1' => [Pair.new(1,2), Pair.new(1,7), Pair.new(2,1), Pair.new(2,2),
             Pair.new(2,3), Pair.new(2,4), Pair.new(2,5), Pair.new(2,6),
@@ -198,7 +197,9 @@ class Letter
   
     '+' => [Pair.new(1,4), Pair.new(2,3), Pair.new(2,4), Pair.new(2,5),
             Pair.new(3,4)],
-
+            
+    '-' => [Pair.new(1,4), Pair.new(2,4), Pair.new(3,4)],
+            
     ',' => [Pair.new(1,7), Pair.new(2,6)],
 
     '.' => [Pair.new(1,7)],
