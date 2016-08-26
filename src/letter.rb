@@ -223,13 +223,14 @@ class Letter
   def initialize(character)
     @char   = character.upcase()
     @bitmap = Letter::LETTERS[character.upcase()] #array of Pair objects
+    if @bitmap == nil
+      @bitmap = Letter::LETTERS[' ']
+      puts "Warning: unsupported character ('#{character}') replaced by a space."
+    end
     @height = Letter.height(bitmap)
     @width  = Letter.width(bitmap)
 
-    if @bitmap == nil
-      @bitmap = Letter::LETTERS[' ']
-      puts "Warning: unsupported character (#{character}) replaced by a space."
-    end
+   
     
     if @bitmap.length == 0
         @width = 1

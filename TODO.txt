@@ -1,5 +1,5 @@
 To do:
 
- * Website with check box select (using Sinatra)
+ * Website with check box select
  
- * (optional)Command line options parsing 
+ * (optional) Command line options parsing 
