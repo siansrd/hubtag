@@ -1,9 +1,5 @@
 To do:
 
-* Check input for unsupported characters e.g.'&' 
-  (looking it up in LETTERS returns nil)
-   What's your tag?
-   guns&roses
-   <error/crash>
-
  * Website with check box select (using Sinatra)
+ 
+ * (optional)Command line options parsing 
