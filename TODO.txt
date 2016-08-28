@@ -1,5 +1,7 @@
 To do:
 
+ * Align single-digit week numbers to the right
+
  * Website with check box select
  
  * (optional) Command line options parsing 
