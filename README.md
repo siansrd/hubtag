@@ -1,7 +1,6 @@
 **HUBTAG**
 
-Suggests a schedule for contributions on github that 
-would appear as a short textual message on the summary display.
+Tag your GitHub profile grid. Use HubTag to get your tag's schedule so you know which days to contribute.
 
 ![hubtag](./resources/hubtag.png)
 
